@@ -6,24 +6,20 @@ function myFunction(a, b) {
     var contenido = a[llave];
     resultado = llave.search(b);
 
-
-    if (resultado != -1 && contenido!=undefined) {
+    if (resultado != -1 && contenido != undefined) {
       temp = temp + 1;
     } else {
       temp = temp + 0;
     }
   }
-  
+
   if (temp >= 1) {
-    
-    res=true
-    
+    res = true;
   } else {
-    res=false
+    res = false;
   }
-  
-  return res
-  
+
+  return res;
 }
 
 console.log(myFunction({ a: 1, b: 2, c: 3 }, "b"));
