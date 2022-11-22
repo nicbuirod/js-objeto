@@ -1,25 +1,19 @@
-function myFunction(a, b) {
-  var llaves = Object.keys(a);
-  let temp = 0;
-  for (var i = 0; i < llaves.length; i++) {
-    var llave = llaves[i];
-    var contenido = a[llave];
-    resultado = llave.search(b);
+function myFunction(a, b){
+  let llaves = Object.keys(a);
+  let flag = null;
 
-    if (resultado != -1 && contenido != undefined) {
-      temp = temp + 1;
-    } else {
-      temp = temp + 0;
-    }
+  for(let i=0; i<llaves.length; i++){
+  var llave = llaves[i];
+
+  if(llaves[i] == b && a[llave]!=undefined){
+      flag = true;
+      i = llaves.length;
+      
+   }else{
+      flag = false;
+   }
   }
-
-  if (temp >= 1) {
-    res = true;
-  } else {
-    res = false;
-  }
-
-  return res;
+return flag;
 }
 
 console.log(myFunction({ a: 1, b: 2, c: 3 }, "b"));
